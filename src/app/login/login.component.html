@@ -1,0 +1,30 @@
+
+<div  class="row m-5">
+ <div class="col-4">
+   <div>
+    <img src="https://www.insiderintelligence.com/static/2914c47c2a19ae04acc765601464f564/Banking-CMO_2x1.png" alt="">
+   </div>
+ </div>
+ <div class="col-4 ">
+    <form (ngSubmit)="login()" [formGroup]="loginForm" class="m-5 p-3">
+        <div>
+            <label class="text-light"  for="">Account Number</label>
+            <input formControlName="acno" name="acno"  type="text" placeholder="Ac Number" class="form-control">
+        </div>
+        <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched" class="text-danger">
+          inavlid Account Number
+        </div>
+        <div class="m-2">
+            <label class="text-light" for="pswd">PassWord</label>
+            <input formControlName="pswd" name="pswd" type="text" placeholder="password" class="form-control">
+        </div>
+        <div *ngIf="this.loginForm.get('pswd')?.errors && this.loginForm.get('pswd')?.touched" class="text-danger">
+            inavlid Password
+          </div>
+        <div  class="m-2">
+            <button type="submit"  class="btn btn-dark">Login</button>&nbsp;
+            <span id="btn" class="text-dark">New User? Click here to <a class="text-dark" href="">Register</a></span>
+        </div>
+    </form>
+ </div>
+</div>
